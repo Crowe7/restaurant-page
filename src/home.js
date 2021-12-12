@@ -13,4 +13,28 @@
         <p>Don't order here today!</p>
     </div>
     </div> */
-    
+
+function makeHeader() {
+    document.body.classList.add('background');
+
+
+    let header = document.createElement('header');
+    header.classList.add('header');
+    document.body.appendChild(header);
+
+    let headerH1 = document.createElement('h1');
+    headerH1.innerText = 'Generic Breakfast and Bad Coffee';
+    header.appendChild(headerH1);
+
+    let buttonWrapper = document.createElement('div');
+    buttonWrapper.classList.add('button-wrapper');
+    header.appendChild(buttonWrapper);
+
+    for(i = 0; i < 2; i++) {
+        let button = document.createElement('button');
+        button.classList.add('menu');
+        button.setAttribute('id', i);
+        buttonWrapper.appendChild(button);
+    }
+}
+makeHeader();
