@@ -6,10 +6,6 @@
     margin: 0;
 }
 body {
-    background-image: url(./background.jpeg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     flex-direction: column;
@@ -19,11 +15,39 @@ body {
 .header {
     font-family: 'Fuzzy Bubbles', sans-serif !important;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 50px;
+    align-items: center;
+    padding: 30px;
     background-color: rgb(0, 0, 0, .1)
 }
+.button-wrapper {
+    display: flex;
+    margin-top: 50px;
+    gap: 80px;
+}
+.menu {
+    font-family:fantasy;
+    font-size: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transition: margin .5s;
 
+}
+.menu:hover {
+    margin-top: 20px;
+    cursor: pointer;
+    
+}
+.current-tab{
+    border-bottom: 4px solid rgb(0, 0, 0) !important;
+}
 .background {
+    /* CHANGE BACKGROUND IMAGE TO BE MADE IN JS
+       AND APPEND THAT TO BODY SOMEHOW */
+    background-image: url(../src/assets/background.jpeg);
     background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
