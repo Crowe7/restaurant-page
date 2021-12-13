@@ -14,27 +14,22 @@
     </div>
     </div> */
 
-function makeHeader() {
-    document.body.classList.add('background');
+function makeHome() {
+    let contentWrapperer = document.createElement('div');
+    contentWrapperer.classList.add('content-wrapper-wrapper');
+    document.body.appendChild(contentWrapperer);
 
+    let contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('content-wrapper');
+    contentWrapperer.appendChild(contentWrapper);
 
-    let header = document.createElement('header');
-    header.classList.add('header');
-    document.body.appendChild(header);
+    let sectionHeader = document.createElement('h2');
+    sectionHeader.innerText = 'This diner is really rundown and is used almost exclusivly for money laundering!';
+    contentWrapper.appendChild(sectionHeader);
 
-    let headerH1 = document.createElement('h1');
-    headerH1.innerText = 'Generic Breakfast and Bad Coffee';
-    header.appendChild(headerH1);
-
-    let buttonWrapper = document.createElement('div');
-    buttonWrapper.classList.add('button-wrapper');
-    header.appendChild(buttonWrapper);
-
-    for(i = 0; i < 2; i++) {
-        let button = document.createElement('button');
-        button.classList.add('menu');
-        button.setAttribute('id', i);
-        buttonWrapper.appendChild(button);
-    }
+    let sectionPara = document.createElement('p');
+    sectionPara.innerText = "Don't order here today!";
+    contentWrapper.appendChild(sectionPara);
 }
-makeHeader();
+
+export default makeHome;

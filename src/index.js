@@ -1,4 +1,5 @@
 import './style.css';
+import makeHome from './home';
 /* <body class="background">
     <header class="header">
         <h1>Generic Breakfast and Bad Coffee</h1>
@@ -35,7 +36,7 @@ import './style.css';
 
     }
     makeHeader();
-
+    makeHome();
     function menuButtons(buttonWrapper) {
         for(let i = 0; i <= 2; i++) {
             let button = document.createElement('button');
@@ -43,7 +44,7 @@ import './style.css';
             button.setAttribute('id', i);
             buttonWrapper.appendChild(button);
         }
-        let home = document.getElementById('0')
+        let home = document.getElementById('0');
         home.innerText = "Home";
 
         let menu = document.getElementById('1');
@@ -52,3 +53,4 @@ import './style.css';
         let about = document.getElementById('2');
         about.innerText = 'About';
     }
+
