@@ -45,24 +45,19 @@ import makeHome from './home';
             let button = document.createElement('button');
             button.classList.add('menu');
             button.setAttribute('id', i);
+            button.addEventListener('click', () => {
+                setCurrTab(buttonWrapper, button);
+            });
             buttonWrapper.appendChild(button);
         }
         let home = document.getElementById('0');
         home.innerText = "Home";
-        home.addEventListener('click', () => {
-            setCurrTab(buttonWrapper, home);
-        });
+
         let menu = document.getElementById('1');
         menu.innerText = 'Menu';
-        menu.addEventListener('click', () => {
-            setCurrTab(buttonWrapper, menu);
-        });
 
         let about = document.getElementById('2');
         about.innerText = 'About';
-        about.addEventListener('click', () => {
-            setCurrTab(buttonWrapper, about);
-        });
 
     }
 
