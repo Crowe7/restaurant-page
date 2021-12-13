@@ -33,10 +33,13 @@ import makeHome from './home';
         header.appendChild(buttonWrapper);
     
         menuButtons(buttonWrapper);
+        // MOVE THIS TO AN INIT PAGE FUNCTION
+        setCurrTab(buttonWrapper, document.getElementById('0'));
 
     }
     makeHeader();
     makeHome();
+    setCurrTab(document.getElementById('0'));
     function menuButtons(buttonWrapper) {
         for(let i = 0; i <= 2; i++) {
             let button = document.createElement('button');
@@ -46,11 +49,34 @@ import makeHome from './home';
         }
         let home = document.getElementById('0');
         home.innerText = "Home";
-
+        home.addEventListener('click', () => {
+            setCurrTab(buttonWrapper, home);
+        });
         let menu = document.getElementById('1');
         menu.innerText = 'Menu';
+        menu.addEventListener('click', () => {
+            setCurrTab(buttonWrapper, menu);
+        });
 
         let about = document.getElementById('2');
         about.innerText = 'About';
+        about.addEventListener('click', () => {
+            setCurrTab(buttonWrapper, about);
+        });
+
+    }
+
+    function setCurrTab(buttonWrapper, tab) {
+        let buttons = buttonWrapper.children;
+        for(let i = 0; i < buttons.length; i++) {
+            if(tab === buttons[i]) {
+                buttons[i].classList.add('current-tab');
+            }
+            else {
+                if(buttons[i].classList.contains('current-tab')) {
+                    buttons[i].classList.remove('current-tab');
+                }
+            }
+        }
     }
 
