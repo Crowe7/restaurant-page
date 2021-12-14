@@ -38,13 +38,13 @@ import makeHome from './home';
 
     }
     makeHeader();
-    makeHome();
-    setCurrTab(document.getElementById('0'));
+    // makeHome();
     function menuButtons(buttonWrapper) {
         for(let i = 0; i <= 2; i++) {
             let button = document.createElement('button');
             button.classList.add('menu');
             button.setAttribute('id', i);
+            //add an if checking the id then assign one of the tab functions based on the number of the clicked tab
             button.addEventListener('click', () => {
                 setCurrTab(buttonWrapper, button);
             });
@@ -75,3 +75,4 @@ import makeHome from './home';
         }
     }
 
+//TODO make clear page logic when button is clicked then load correct page
