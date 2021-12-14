@@ -15,9 +15,8 @@
     </div> */
 
 function makeHome() {
-    let contentWrapperer = document.createElement('div');
-    contentWrapperer.classList.add('content-wrapper-wrapper');
-    document.body.appendChild(contentWrapperer);
+    let contentWrapperer = document.querySelector('.content-wrapper-wrapper');
+    contentWrapperer.innerHTML = "";
 
     let contentWrapper = document.createElement('div');
     contentWrapper.classList.add('content-wrapper');

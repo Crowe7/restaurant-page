@@ -1,6 +1,7 @@
 import './style.css';
 import makeHome from './home';
 import makeMenu from './menu';
+import makeContact from './contact';
 /* <body class="background">
     <header class="header">
         <h1>Generic Breakfast and Bad Coffee</h1>
@@ -16,6 +17,19 @@ import makeMenu from './menu';
         <p>Don't order here today!</p>
     </div>
     </div> */
+    function initPage() {
+        makeHeader();
+        makeWrapper();
+        makeHome();
+    }
+    initPage();
+
+    
+    function makeWrapper() {
+        let contentWrapperer = document.createElement('div');
+        contentWrapperer.classList.add('content-wrapper-wrapper');
+        document.body.appendChild(contentWrapperer);
+    }
 
     function makeHeader() {
         document.body.classList.add('background');
@@ -36,10 +50,8 @@ import makeMenu from './menu';
         menuButtons(buttonWrapper);
         // MOVE THIS TO AN INIT PAGE FUNCTION
         setCurrTab(buttonWrapper, document.getElementById('0'));
-
     }
-    makeHeader();
-    // makeHome();
+
     function menuButtons(buttonWrapper) {
         for(let i = 0; i <= 2; i++) {
             let button = document.createElement('button');
@@ -48,6 +60,17 @@ import makeMenu from './menu';
             //add an if checking the id then assign one of the tab functions based on the number of the clicked tab
             button.addEventListener('click', () => {
                 setCurrTab(buttonWrapper, button);
+                clearPage();
+                if(i === 0) {
+                    makeHome();
+                }
+                else if(i === 1) {
+                    makeMenu();
+                }
+                else if(i === 2) {
+                    makeContact();
+                }
+
             });
             buttonWrapper.appendChild(button);
         }
@@ -76,4 +99,9 @@ import makeMenu from './menu';
         }
     }
 
+
+    function clearPage() {
+       let main = document.getElementsByClassName('content-wrapper-wrapper');
+       
+    }
 //TODO make clear page logic when button is clicked then load correct page
