@@ -1,5 +1,6 @@
 import './style.css';
 import makeHome from './home';
+import makeMenu from './menu';
 /* <body class="background">
     <header class="header">
         <h1>Generic Breakfast and Bad Coffee</h1>

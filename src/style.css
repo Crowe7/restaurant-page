@@ -71,3 +71,20 @@ body {
 }
 
 /* MENU PAGE */
+.menu-wrapper {
+    display: grid;
+    color: white;
+    grid-template:repeat(2, 1fr) / repeat(2, 1fr);
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 40px;
+    gap: 20px;
+    height: 500px;
+    width: 700px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.692)
+}
+.image {
+    height: 150px;
+    width: 200px;
+}
